@@ -50,8 +50,8 @@ public class Atividade1 {
                                               + "INSS: " + INSS + "\n"
                                               + "Salário líquido: " + salarioLiquido);
         } catch(Exception e){
-            System.out.println("\nOcorreu um erro... " + e.getMessage()
-                                        + "\nClasse do erro: " + e.getClass());
+            JOptionPane.showMessageDialog(null, "\nOcorreu um erro: " + e.getMessage()
+                                                + "\nClasse do Erro: " + e.getClass());
         }  
     }  
 }
