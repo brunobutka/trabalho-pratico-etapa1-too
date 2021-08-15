@@ -51,7 +51,7 @@ public class Atividade2 {
                                                     + "Dias de locação: " + p2 + "\n"
                                                     + "Valor total da locação: " + valorTotal);
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Ocorreu um erro: " + e.getMessage()
+            JOptionPane.showMessageDialog(null, "\nOcorreu um erro: " + e.getMessage()
                                                 + "\nClasse do Erro: " + e.getClass());
         }
     }
