@@ -19,8 +19,8 @@ public class Atividade3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String dataInserida = null, exibicaoDatas = null;
-        LocalDate dataI = null;
+        String dataInserida, exibicaoDatas;
+        LocalDate dataI;
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         
         try{

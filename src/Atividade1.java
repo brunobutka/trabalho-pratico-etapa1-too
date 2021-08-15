@@ -1,5 +1,6 @@
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,39 +18,37 @@ public class Atividade1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String nome = "";
-        float salarioBruto = 0, INSS = 0, salarioLiquido = 0;
+        String nome, strSalarioBruto;
+        float fSalarioBruto, INSS = 0, salarioLiquido = 0;
         
         try{
-            System.out.print("Nome: ");
-            nome = sc.nextLine();
+            nome = JOptionPane.showInputDialog("Nome: ");
+
+            strSalarioBruto = JOptionPane.showInputDialog("Salário bruto: ");
+            fSalarioBruto = Float.parseFloat(strSalarioBruto);
             
-            System.out.print("Salário bruto (R$): ");
-            salarioBruto = sc.nextFloat();
-            
-            if(salarioBruto < 0){
+            if(fSalarioBruto < 0){
                 throw new Exception("\nO salário bruto não pode ser negativo");
             }
             
-            if(salarioBruto >= 0 && salarioBruto <= 1100){
-            INSS = (float) (salarioBruto * 0.075);
-            salarioLiquido = salarioBruto - INSS;
-            } else if(salarioBruto > 1100 && salarioBruto <= 2203.48){
-                INSS = (float) (salarioBruto * 0.09);
-                salarioLiquido = salarioBruto - INSS;
-            } else if(salarioBruto > 2203.48 && salarioBruto <= 3305.22){
-                INSS = (float) (salarioBruto * 0.12);
-                salarioLiquido = salarioBruto - INSS;
-            } else if(salarioBruto > 3305.22){
-                INSS = (float) (salarioBruto * 0.14);
-                salarioLiquido = salarioBruto - INSS;
+            if(fSalarioBruto >= 0 && fSalarioBruto <= 1100){
+            INSS = (float) (fSalarioBruto * 0.075);
+            salarioLiquido = fSalarioBruto - INSS;
+            } else if(fSalarioBruto > 1100 && fSalarioBruto <= 2203.48){
+                INSS = (float) (fSalarioBruto * 0.09);
+                salarioLiquido = fSalarioBruto - INSS;
+            } else if(fSalarioBruto > 2203.48 && fSalarioBruto <= 3305.22){
+                INSS = (float) (fSalarioBruto * 0.12);
+                salarioLiquido = fSalarioBruto - INSS;
+            } else if(fSalarioBruto > 3305.22){
+                INSS = (float) (fSalarioBruto * 0.14);
+                salarioLiquido = fSalarioBruto - INSS;
             }
         
-            System.out.println("\nNome: " + nome);
-            System.out.println("Salário bruto: " + salarioBruto);
-            System.out.println("INSS: " + INSS);
-            System.out.println("Salário líquido: " + salarioLiquido);
+            JOptionPane.showMessageDialog(null, "Nome: " + nome + "\n" 
+                                              + "Salário bruto: " + fSalarioBruto + "\n"
+                                              + "INSS: " + INSS + "\n"
+                                              + "Salário líquido: " + salarioLiquido);
         } catch(Exception e){
             System.out.println("\nOcorreu um erro... " + e.getMessage()
                                         + "\nClasse do erro: " + e.getClass());

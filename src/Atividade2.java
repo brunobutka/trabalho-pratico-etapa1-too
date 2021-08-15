@@ -22,10 +22,10 @@ public class Atividade2 {
      */
     public static void main(String[] args) {
         
-        float d = 0, valorTotal = 0, p = 0;
-        String diaria = null, dataLocacao = null, dataDevolucao = null;
+        float d, valorTotal;
+        String diaria, dataLocacao, dataDevolucao;
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate dataL = null, dataD = null;
+        LocalDate dataL, dataD;
         
         try{
             diaria = JOptionPane.showInputDialog("Informe o valor da diária: ");
