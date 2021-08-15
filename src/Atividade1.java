@@ -31,29 +31,28 @@ public class Atividade1 {
             if(salarioBruto < 0){
                 throw new Exception("\nO salário bruto não pode ser negativo");
             }
+            
+            if(salarioBruto >= 0 && salarioBruto <= 1100){
+            INSS = (float) (salarioBruto * 0.075);
+            salarioLiquido = salarioBruto - INSS;
+            } else if(salarioBruto > 1100 && salarioBruto <= 2203.48){
+                INSS = (float) (salarioBruto * 0.09);
+                salarioLiquido = salarioBruto - INSS;
+            } else if(salarioBruto > 2203.48 && salarioBruto <= 3305.22){
+                INSS = (float) (salarioBruto * 0.12);
+                salarioLiquido = salarioBruto - INSS;
+            } else if(salarioBruto > 3305.22){
+                INSS = (float) (salarioBruto * 0.14);
+                salarioLiquido = salarioBruto - INSS;
+            }
+        
+            System.out.println("\nNome: " + nome);
+            System.out.println("Salário bruto: " + salarioBruto);
+            System.out.println("INSS: " + INSS);
+            System.out.println("Salário líquido: " + salarioLiquido);
         } catch(Exception e){
             System.out.println("\nOcorreu um erro... " + e.getMessage()
                                         + "\nClasse do erro: " + e.getClass());
-        }
-        
-        if(salarioBruto >= 0 && salarioBruto <= 1100){
-            INSS = (float) (salarioBruto * 0.075);
-            salarioLiquido = salarioBruto - INSS;
-        } else if(salarioBruto > 1100 && salarioBruto <= 2203.48){
-            INSS = (float) (salarioBruto * 0.09);
-            salarioLiquido = salarioBruto - INSS;
-        } else if(salarioBruto > 2203.48 && salarioBruto <= 3305.22){
-            INSS = (float) (salarioBruto * 0.12);
-            salarioLiquido = salarioBruto - INSS;
-        } else if(salarioBruto > 3305.22){
-            INSS = (float) (salarioBruto * 0.14);
-            salarioLiquido = salarioBruto - INSS;
-        }
-        
-        
-        System.out.println("\nNome: " + nome);
-        System.out.println("Salário bruto: " + salarioBruto);
-        System.out.println("INSS: " + INSS);
-        System.out.println("Salário líquido: " + salarioLiquido);
+        }  
     }  
 }
